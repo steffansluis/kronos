@@ -1,4 +1,8 @@
 describe "TemporalList", ->
 
   beforeEach ->
-    @list = new Kronos.TemporalList([1,5,4,3,6])
+    @array = [1,5,4,3,6]
+    @list = new Kronos.TemporalList(@array)
+
+  it "should contain the initial values", ->
+    expect(@list.toArray()).toEqual(@array)

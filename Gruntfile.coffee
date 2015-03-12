@@ -35,8 +35,8 @@ module.exports = ( grunt ) ->
 
     coffee:
       default:
-        options:
-          sourceMap: true
+        # options:
+          # sourceMap: true
         files: [
           expand: true
           cwd: 'src'
@@ -46,8 +46,8 @@ module.exports = ( grunt ) ->
         ]
 
       spec:
-        options:
-          sourceMap: true
+        # options:
+        #   sourceMap: true
         files: [
           expand: true
           cwd: 'spec'
@@ -68,6 +68,7 @@ module.exports = ( grunt ) ->
       default:
         src:  ['dist/kronos.browser.js']
         options:
+          vendor: ['node_modules/sonic/dist/sonic.browser.js']
           keepRunner: true
           specs: 'build/spec/**/*.js'
       lcovonly:
@@ -86,12 +87,11 @@ module.exports = ( grunt ) ->
       build: ['build']
 
     watch:
-
       dist:
         files: ['src/**/*.coffee']
         tasks: ['coffee:dist']
       spec:
-        files: ['**/*.coffee']
+        files: ['src/**/*.coffee', 'spec/**/*.coffee']
         tasks: ['spec']
       build:
         files: ['src/**/*.coffee']
