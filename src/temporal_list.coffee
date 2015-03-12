@@ -1,41 +1,12 @@
-class TemporalList extends Sonic.AbstractList
+class TemporalList extends Sonic.List
 
   constructor: ( values = [] ) ->
     super()
 
     @_source = values
     @_move(0, next: 0)
-    @_add value, next:0 for value in @_source
-    Object.observe @_source, @_onSourceInvalidate
-
-  set: ( id, value ) ->
-    return @_set(id, value)
-
-  push: ( value ) ->
-    return @_add(value, next: 0)
-
-  unshift: ( value ) ->
-    return @_add(value, prev: 0)
-
-  pop: ( ) ->
-    id = @prev()
-    value = @get(id)
-    return value if @_delete(id)
-
-  shift: ( ) ->
-    id = @next()
-    value = @get(id)
-    return value if @_delete(id)
-
-  add: ( value ) ->
-    return @push(value)
-
-  remove: ( value ) ->
-    id = @idOf(value)
-    return @_delete(id)
-
-  delete: ( id ) ->
-    return @_delete(id)
+    @_add(value, null, 0) for value in @_source
+    Object.observe @_source, @_onSourceInvalidate if Object.observe?
 
   _onSourceInvalidate: ( events ) =>
     for event in events
