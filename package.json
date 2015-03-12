@@ -1,0 +1,46 @@
+{
+  "name": "kronos",
+  "description": "Temporal control over your data",
+  "version": "0.0.1",
+  "author": "Steffan Sluis",
+  "contributors": [
+    "Steffan Sluis",
+    "Joost Verdoorn"
+  ],
+  "main": "dist/kronos",
+  "files": "dist",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/steffansluis/kronos/blob/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/steffansluis/kronos.git"
+  },
+  "devDependencies": {
+    "babel-core": "^4.0.0",
+    "grunt": "~0.4.5",
+    "grunt-babel": "^4.0.0",
+    "grunt-browserify": "^3.5.0",
+    "grunt-codo": "^0.2.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-coffee": "~0.10.1",
+    "grunt-contrib-concat": "~0.5.0",
+    "grunt-contrib-jasmine": "~0.6.5",
+    "grunt-contrib-qunit": "^0.5.2",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-plato": "~1.3.0",
+    "grunt-requirejs": "~0.4.2",
+    "grunt-template-jasmine-istanbul": "~0.3.0",
+    "coveralls": "~2.11.1"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "sonic": "joostverdoorn/sonic#tests"
+  }
+}
