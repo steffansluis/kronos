@@ -12,22 +12,25 @@ class TemporalList extends Sonic.List
     for event in events
       continue if isNaN parseInt(event.name)
       value = event.object[event.name]
+      oldValue = event.oldValue
 
-      console.log event, event.type
+      # console.log event, event.type
       switch event.type
         when 'add'
-          console.log "Adding", value
+          # console.log "Adding", value
           @add(value)
         when 'delete'
-          console.log "Removing", value
-          @remove value
+          # console.log "Removing", oldValue
+          @remove oldValue
         when 'update'
           oldValue = event.oldValue
-          console.log "Updating", oldValue, "to", value
+          # console.log "Updating", oldValue, "to", value
           @set(@idOf(oldValue), value)
           # @get(@idOf(event.oldValue)).yield(value)
 
-    @_invalidate()
+    # @_invalidate()
+  _invalidate: ( ) ->
+
 
 
 module.exports = TemporalList
