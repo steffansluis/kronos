@@ -74,12 +74,14 @@ module.exports = ( grunt ) ->
       lcovonly:
         src:  ['dist/kronos.browser.js']
         options: (coverage 'lcovonly',
+          vendor: ['node_modules/sonic/dist/sonic.browser.js']
           keepRunner: true
           specs: 'build/spec/**/*.js'
         )
       html:
         src: ['dist/kronos.browser.js']
         options: (coverage 'html',
+          vendor: ['node_modules/sonic/dist/sonic.browser.js']
           specs: 'build/spec/**/*.js'
         )
 
