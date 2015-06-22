@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "target": "es6",
+        "noImplicitAny": true,
+        "declaration": true
+    },
+    "filesGlob": [
+        "src/**/*.ts"
+    ],
+    "files": [
+        "src/kronos.ts",
+        "src/thenable.ts"
+    ]
+}
