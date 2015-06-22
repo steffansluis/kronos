@@ -10,6 +10,7 @@
     ],
     "files": [
         "src/kronos.ts",
+        "src/schedulers.ts",
         "src/thenable.ts"
     ]
 }
